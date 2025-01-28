@@ -1,5 +1,5 @@
 import express from 'express';
-import sequelize from '../config/database';
+import sequelize from '../database/config/database';
 // import http, { IncomingMessage, ServerResponse } from 'http'
 import authRoutes from './routes/authRoutes';
 import helloRoutes from './routes/helloRoutes';
