@@ -1,5 +1,5 @@
 
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import fs from 'fs';
 import path from 'path';
 

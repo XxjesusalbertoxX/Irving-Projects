@@ -1,20 +1,23 @@
-# Usa una imagen base de Node.js
+# Use a Node.js base image
 FROM node:18-alpine
 
-# Establece el directorio de trabajo dentro del contenedor
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copia los archivos de dependencias (package.json y package-lock.json)
+# Install necessary build tools
+RUN apk add --no-cache make gcc g++ python3
+
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Instala las dependencias
+# Install dependencies
 RUN npm install
 
-# Copia el resto de los archivos del proyecto
+# Copy the rest of the project files
 COPY . .
 
-# Expone el puerto en el que corre la aplicación (3000)
+# Expose port 3000 for the application
 EXPOSE 3000
 
-# Comando para iniciar la aplicación
+# Command to start the application
 CMD ["npm", "run", "start"]

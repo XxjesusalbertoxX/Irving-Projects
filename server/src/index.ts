@@ -27,7 +27,12 @@ app.use('/api/v1.0.0/auth', authRoutes);
 
 app.use('/api/helloworld', helloRoutes);
 
-sequelize.sync({ alter: true }).then(() => {
-  console.log('Database synced');
-  app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-});
+sequelize
+  .authenticate()
+  .then(() => console.log("✅ PostgreSQL Connected!"))
+  .catch((err) => console.error("❌ Connection error:", err));
+
+// sequelize.sync({ alter: true }).then(() => {
+//   console.log('Database synced');
+//   app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// });

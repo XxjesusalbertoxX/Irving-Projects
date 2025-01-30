@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "admin",
+    "password": "admin123",
+    "database": "mydb",
+    "host": "postgres-container",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
